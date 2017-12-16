@@ -1,0 +1,58 @@
+{
+  "name": "omginsta",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "lint": "tslint -c tslint.json 'src/**/*.ts?(x)'",
+    "tsc": "tsc",
+    "clean": "rm -rf build",
+    "build": "npm run clean && npm run tsc --",
+    "watch": "npm run build -- -w",
+    "start:ios": "npm run build && concurrently -r 'npm run watch' 'react-native run-ios'",
+    "start:android": "npm run build && concurrently -r 'npm run watch' 'react-native run-android'"
+  },
+  "dependencies": {
+    "mobx": "^3.3.2",
+    "mobx-react": "^4.3.5",
+    "mobx-state-tree": "^1.1.0",
+    "react": "16.0.0",
+    "react-native": "0.51.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^21.1.8",
+    "@types/react": "^16.0.31",
+    "@types/react-native": "^0.51.3",
+    "@types/react-test-renderer": "^16.0.0",
+    "babel-jest": "21.2.0",
+    "babel-preset-react-native": "4.0.0",
+    "concurrently": "^3.5.1",
+    "jest": "21.2.1",
+    "react-test-renderer": "16.0.0",
+    "ts-jest": "^21.2.4",
+    "tslint": "^5.8.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.6.2"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/",
+      "<rootDir>/lib/"
+    ],
+    "cacheDirectory": ".jest/cache"
+  }
+}

@@ -1,2 +1,2 @@
-export const TODO_STORE = 'TODO_STORE';
+export const PHOTOS_STORE = 'PHOTOS_STORE';
 export const PROFILE_STORE = 'PROFILE_STORE';

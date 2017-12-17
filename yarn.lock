@@ -6,6 +6,10 @@
   version "21.1.8"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-21.1.8.tgz#d497213725684f1e5a37900b17a47c9c018f1a97"
 
+"@types/node@*":
+  version "8.5.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.1.tgz#4ec3020bcdfe2abffeef9ba3fbf26fca097514b5"
+
 "@types/react-native@^0.51.3":
   version "0.51.3"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.51.3.tgz#73aae1b9b2618ead387ede3a80a17980b0e0d1f0"
@@ -21,6 +25,12 @@
 "@types/react@*", "@types/react@^16.0.31":
   version "16.0.31"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.31.tgz#5285da62f3ac62b797f6d0729a1d6181f3180c3e"
+
+"@types/uuid@^3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-3.4.3.tgz#121ace265f5569ce40f4f6d0ff78a338c732a754"
+  dependencies:
+    "@types/node" "*"
 
 abab@^1.0.3:
   version "1.0.4"
@@ -3550,19 +3560,19 @@ mixin-deep@^1.2.0:
   dependencies:
     minimist "0.0.8"
 
-mobx-react@^4.3.5:
+mobx-react@4.3.5:
   version "4.3.5"
   resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-4.3.5.tgz#76853f2f2ef4a6f960c374bcd9f01e875929c04c"
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
-mobx-state-tree@^1.1.0:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/mobx-state-tree/-/mobx-state-tree-1.2.1.tgz#ce15ed5d2d7e82bb83d66de12a22fb56400f45d1"
+mobx-state-tree@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/mobx-state-tree/-/mobx-state-tree-1.1.0.tgz#72acb4a9d19d74df82694ab56a7d955f8e349da3"
 
-mobx@^3.3.2:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/mobx/-/mobx-3.4.1.tgz#37abe5ee882d401828d9f26c6c1a2f47614bbbef"
+mobx@3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-3.3.2.tgz#e912a9f7c82b2df69f1abe6515ecaa551828a024"
 
 morgan@~1.6.1:
   version "1.6.1"
@@ -4178,16 +4188,22 @@ react-native-animatable@^1.2.3:
   dependencies:
     prop-types "^15.5.10"
 
-react-native-image-picker@^0.26.7:
+react-native-image-picker@0.26.7:
   version "0.26.7"
   resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-0.26.7.tgz#ad2ee957f7f6cc01396893ea03d84cb2adb2e376"
 
-react-native-modal@^4.1.1:
+react-native-modal@4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/react-native-modal/-/react-native-modal-4.1.1.tgz#4c1055dc045106542a8e3bb3fd656a6d3bc319d9"
   dependencies:
     prop-types "15.5.10"
     react-native-animatable "^1.2.3"
+
+react-native-photo-view@1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/react-native-photo-view/-/react-native-photo-view-1.5.2.tgz#5d7f406ed5532a5a8a78c8ef8f40e81f688de1e2"
+  dependencies:
+    prop-types "^15.5.10"
 
 react-native@0.51.0:
   version "0.51.0"

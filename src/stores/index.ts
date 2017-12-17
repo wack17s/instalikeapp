@@ -1,7 +1,7 @@
-import todo from './todo';
+import photos from './photos';
 import profile from './profile';
 
 export default {
-    todo,
+    photos,
     profile
 } as { [key: string]: object };

@@ -3,19 +3,19 @@ import { Provider } from 'mobx-react';
 
 import stores from './stores';
 
-import { TODO_STORE, PROFILE_STORE } from './constants/stores';
+import { PHOTOS_STORE, PROFILE_STORE } from './constants/stores';
 
 export interface Props {
     children: JSX.Element;
 }
 
 const {
-    todo,
+    photos,
     profile
 } = stores;
 
 const rootStores = {
-    [TODO_STORE]: todo,
+    [PHOTOS_STORE]: photos,
     [PROFILE_STORE]: profile
 } as { [key: string]: object };
 

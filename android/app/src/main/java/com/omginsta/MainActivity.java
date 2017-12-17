@@ -1,6 +1,7 @@
 package com.omginsta;
 
 import com.facebook.react.ReactActivity;
+import com.reactnative.photoview.PhotoViewPackage;
 
 public class MainActivity extends ReactActivity {
 

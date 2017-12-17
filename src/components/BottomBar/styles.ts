@@ -1,20 +1,31 @@
 import { StyleSheet } from 'react-native';
 
 import sizes from '../../constants/sizes';
+import colors from '../../constants/colors';
 
 export default StyleSheet.create({
     container: {
         width: '100%',
         height: sizes.BOTTOM_BAR_HEIGHT,
-        backgroundColor: 'grey',
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: 'white',
         bottom: 0,
-        position: 'absolute'
+        position: 'absolute',
+        flexDirection: 'column'
+    },
+    innerContainer: {
+        width: '100%',
+        height: '100%',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     text: {
-        color: 'white',
-        fontSize: 28,
-        fontWeight: '600'
+        color: 'black',
+        fontSize: 40,
+        fontWeight: '100'
+    },
+    separator: {
+        backgroundColor: colors.LIGHT_GREY,
+        height: 1,
+        width: '100%'
     }
 });

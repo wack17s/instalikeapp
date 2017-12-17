@@ -24,6 +24,7 @@
         "interface-name": [ true, "never-prefix" ],
         "jsdoc-format": true,
         "jsx-no-lambda": false,
+        "jsx-equals-spacing": false,
         "jsx-no-multiline-js": false,
         "label-position": true,
         "max-file-line-count": [ true, 300 ],
@@ -115,7 +116,7 @@
 
         "no-extra-semi": true,
         "no-irregular-whitespace": true,
-        "no-multi-spaces": true,
+        "no-multi-spaces": false,
         "handle-callback-err": true,
         "array-bracket-spacing": true,
         "block-spacing": "always",

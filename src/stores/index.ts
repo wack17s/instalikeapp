@@ -1,5 +1,7 @@
 import todo from './todo';
+import profile from './profile';
 
 export default {
-    todo
+    todo,
+    profile
 } as { [key: string]: object };

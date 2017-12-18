@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, FlatList, Image, AppState, TouchableOpacity } from 'react-native';
+import { View, FlatList, Image, AppState, TouchableOpacity, StatusBar } from 'react-native';
 import { inject, observer } from 'mobx-react';
 
 import { PROFILE_STORE, PHOTOS_STORE } from '../../constants/stores';
@@ -85,6 +85,7 @@ export default class Main extends React.Component<Props, State> {
 
         return (
             <View style={styles.container}>
+                <StatusBar translucent={true} backgroundColor="transparent" barStyle="dark-content" />
                 <Header onToggleProfile={this.handleToggleProfile} profileOpen={this.props.PROFILE_STORE!.isOpen} />
                 <View style={styles.listContainer}>
                     <FlatList

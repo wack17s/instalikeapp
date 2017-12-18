@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, TouchableOpacity, Image, Text, TextInput, KeyboardAvoidingView } from 'react-native';
+import { View, TouchableOpacity, Image, Text, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import Modal from 'react-native-modal';
 import { inject, observer } from 'mobx-react';
 
@@ -54,6 +54,7 @@ export default class Profile extends React.Component<Props, State> {
     render(): JSX.Element | null {
         const { isOpen, picture, name } = this.props.PROFILE_STORE!;
         const { editMode } = this.state;
+        const imageSource = picture ? { uri: picture } : defaultPicture;
 
         return (
             <Modal
@@ -65,15 +66,25 @@ export default class Profile extends React.Component<Props, State> {
             >
                 <KeyboardAvoidingView behavior="padding" style={styles.container}>
                     <View style={styles.imageContainer}>
-                        <Image source={{ uri: picture }} defaultSource={defaultPicture} style={styles.image} />
-                        {editMode && <TouchableOpacity onPressOut={this.handleChangePicture} activeOpacity={0.9}>
-                            <View style={styles.changePhotoContainer}>
-                                <View style={styles.innerChangePhotoContainer}>
-                                    <Text style={styles.changePhotoText}>Change Photo</Text>
+                        <Image source={imageSource} style={styles.image} />
+                        {editMode && Platform.OS === 'ios' && (
+                            <TouchableOpacity onPressOut={this.handleChangePicture} activeOpacity={0.9}>
+                                <View style={styles.changePhotoContainer}>
+                                    <View style={styles.innerChangePhotoContainer}>
+                                        <Text style={styles.changePhotoText}>Change Photo</Text>
+                                    </View>
                                 </View>
-                            </View>
-                        </TouchableOpacity>}
+                            </TouchableOpacity>
+                        )}
                     </View>
+
+                    {editMode && Platform.OS === 'android' && (
+                        <TouchableOpacity onPressOut={this.handleChangePicture} activeOpacity={0.9}>
+                            <View style={styles.innerChangePhotoContainerAndroid}>
+                                <Text style={styles.changePhotoText}>Change Photo</Text>
+                            </View>
+                        </TouchableOpacity>
+                    )}
 
                     <View style={styles.nameContainer}>
                         {!editMode

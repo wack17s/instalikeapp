@@ -21,7 +21,8 @@ export default StyleSheet.create({
     text: {
         color: 'black',
         fontSize: 40,
-        fontWeight: '100'
+        fontWeight: '100',
+        backgroundColor: 'transparent'
     },
     separator: {
         backgroundColor: colors.LIGHT_GREY,

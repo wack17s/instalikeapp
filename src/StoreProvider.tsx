@@ -20,7 +20,7 @@ const rootStores = {
 } as { [key: string]: object };
 
 export default class StoreProvider extends React.Component<Props, object> {
-    render() {
+    render(): JSX.Element {
         return (
             <Provider {...rootStores}>
                 {this.props.children}

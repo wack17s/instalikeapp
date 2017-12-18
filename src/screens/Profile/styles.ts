@@ -1,21 +1,23 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, StatusBar, Platform } from 'react-native';
 
 import sizes from '../../constants/sizes';
 import colors from '../../constants/colors';
 
 const { width, height } = Dimensions.get('window');
+const STATUS_BAR_HEIGHT = Platform.OS === 'ios' ? 0 : StatusBar.currentHeight || 0;
 
 export default StyleSheet.create({
     modal: {
         margin: 0,
-        marginTop: sizes.HEADER_HEIGHT,
+        marginTop: sizes.HEADER_HEIGHT - STATUS_BAR_HEIGHT,
+        width,
+        height: height - sizes.HEADER_HEIGHT + STATUS_BAR_HEIGHT,
         flexDirection: 'column',
         justifyContent: 'flex-end'
     },
     container: {
         backgroundColor: 'white',
-        width,
-        height: height - sizes.HEADER_HEIGHT,
+        flex: 1,
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center'
@@ -45,10 +47,16 @@ export default StyleSheet.create({
         height: 54,
         alignItems: 'center'
     },
+    innerChangePhotoContainerAndroid: {
+        backgroundColor: colors.LIGHT_GREY,
+        width: 100,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     changePhotoText: {
         color: colors.GREY,
         fontSize: 12,
-        marginTop: 10,
+        margin: 10,
         backgroundColor: 'transparent'
     },
     nameContainer: {
@@ -64,9 +72,10 @@ export default StyleSheet.create({
     editName: {
         minWidth: 200,
         backgroundColor: colors.LIGHT_GREY,
-        height: 30,
+        height: 40,
         borderRadius: 4,
-        paddingLeft: 12
+        paddingLeft: 12,
+        lineHeight: 30
     },
     editButton: {
         width: 60,
@@ -78,10 +87,11 @@ export default StyleSheet.create({
     },
     editText: {
         color: colors.GREY,
-        fontSize: 20
+        fontSize: 20,
+        backgroundColor: 'transparent'
     },
     closeButton: {
-        width: 80,
+        minWidth: 80,
         height: 40,
         justifyContent: 'center',
         alignItems: 'center',

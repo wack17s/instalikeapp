@@ -8,8 +8,9 @@
     "lint": "tslint -c tslint.json 'src/**/*.ts?(x)'",
     "tsc": "gulp && tsc",
     "clean": "rm -rf build",
-    "build": "npm run clean && npm run tsc --",
+    "build": "npm run clean && kill-rn-types && npm run tsc --",
     "watch": "npm run build -- -w",
+    "kill-rn-types": "./killRnTypes.sh",
     "start:ios": "npm run build && concurrently -r 'npm run watch' 'react-native run-ios'",
     "start:android": "npm run build && concurrently -r 'npm run watch' 'react-native run-android'"
   },
@@ -25,11 +26,11 @@
     "uuid": "^3.1.0"
   },
   "devDependencies": {
-    "@types/uuid": "^3.4.3",
     "@types/jest": "^21.1.8",
     "@types/react": "^16.0.31",
     "@types/react-native": "^0.51.3",
     "@types/react-test-renderer": "^16.0.0",
+    "@types/uuid": "^3.4.3",
     "babel-jest": "21.2.0",
     "babel-preset-react-native": "4.0.0",
     "concurrently": "^3.5.1",

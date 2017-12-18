@@ -18,8 +18,8 @@ import pickImage, { Result } from '../../libs/imagePicker';
 import styles from './styles';
 
 export interface Props {
-    PROFILE_STORE: IProfileStore;
-    PHOTOS_STORE: IPhotosStore;
+    PROFILE_STORE?: IProfileStore;
+    PHOTOS_STORE?: IPhotosStore;
 }
 export interface State {}
 
